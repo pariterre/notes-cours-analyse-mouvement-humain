@@ -19,6 +19,8 @@ chapters-to-include = [
   "preliminary-informations",
   "introduction",
   "la-biomecanique",
+  "newton-introduction",
+  "reperes-et-vecteurs",
 ]
 
 annexes-to-include = [
