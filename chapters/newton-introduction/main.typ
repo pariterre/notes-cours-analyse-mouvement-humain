@@ -32,7 +32,7 @@ Donnons des exemples.
 Lorsque l'on se déplace sur la glace en patins et qu'on arrête de patiner, on continue sa trajectoire en ligne droite et il faut une longue distance pour s'arrêter.
 Personne ne se met à tourner subitement sans faire d'action.
 Il est sera de même avec une voiture qui roule sur une plaque de glace ou fait de l'aquaplaning; le voiture ne ralentit pas et poursuit en ligne droite bien que l'on tourne le volant.
-Dans ces deux cas la force de frottement entre le sol (e.g. glace) et les patins ou les pneus est très faible alors le principe d'inertie s'applique.
+Dans ces deux cas la force de frottement entre le sol (#eg, glace) et les patins ou les pneus est très faible alors le principe d'inertie s'applique.
 Un autre exemple est la trajectoire d'un satellite.
 Les satellites qui sont au-delà de l'atmosphère n'ont pas besoin de force propulsive.
 Selon la vitesse à laquelle ils sont mis en orbite, ils vont être géostationnaire, c'est-à-dire se déplaçant à la même vitesse de rotation que le Terre ou avoir une vitesse relative à la Terre.
