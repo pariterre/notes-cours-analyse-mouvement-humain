@@ -1,7 +1,6 @@
 #import "../../common/lib.typ": *
 
 = Informations préliminaires
-<sec:informations-préliminaires>
 Ces notes de cours viennent compléter l'ouvrage de Paul Allard, Georges Dalleau, Mickaël Begon et Jean-Pierre Blanchi _Analyse du mouvement humain par la biomécanique_ troisième édition 2011 (Fidès Éducation), ouvrage qui sert de note de cours pour les étudiants en Kinésiologie.
 L'étudiant pourra trouver dans cet ouvrage de plus amples détails sur des notions de biomécanique ainsi que des exercices.
 Par simplicité, les référence à cet ouvrage seront données tout au long des notes de cours en utilisant la formulation le #Livre (en italique avec un L majuscule).
@@ -23,4 +22,4 @@ Internet est aussi une mine d'informations précieuses.
 Si Facebook est un site Web de réseautage social très fréquenté, l'encyclopédie universelle, librement diffusable et disponible sur le web, #link("https://fr.wikipedia.org/wiki/Accueil")[Wikipédia] est un bel outil de partage des connaissances.
 Les mots bleus et soulignés présentent des liens hypertextes vers des articles de Wikipédia et autres sources d'information.
 Les termes sont liés lors de leur première apparition dans le texte ou lors de moments opportuns.
-Il est possible de trouver l'ensemble des termes et liens en @sec:pages-web-intéressantes.
+Il est possible de trouver l'ensemble des termes et liens en @sec:interesting-web-pages.

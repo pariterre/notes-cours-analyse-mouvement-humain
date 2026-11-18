@@ -1,7 +1,6 @@
 #import "../../common/lib.typ": *
 
 = Biomécanique et Mécanique
-<biomécanique-et-mécanique>
 
 #learning-objectives((
   "Avoir un aperçu large de la biomécanique",
@@ -17,7 +16,6 @@
 ])
 
 == Définir la biomécanique
-<définir-la-biomécanique>
 La biomécanique est un vaste champ.
 Le chapitre 1 du #Livre vous donne un large aperçu.
 Le cadre de ce cours va se restreindre aux applications sportives de la biomécanique en s'intéressant particulièrement à la technique (performance), aux équipements et aux causes des blessures.
@@ -28,7 +26,6 @@ Le cadre de ce cours va se restreindre aux applications sportives de la bioméca
 )
 
 == Petit regard sur la mécanique
-<petit-regard-sur-la-mécanique>
 La science en amont de la biomécanique est la mécanique des systèmes multicorps (science du mouvement des systèmes composés de plusieurs corps articulés).
 La mécanique se divise elle-même en plusieurs sous-disciplines que l'on peut étudier séparément pour des questions de simplicité:
 
@@ -59,14 +56,12 @@ Des principes existent pour lier la cinétique aux forces qui ont été énoncé
 C'est pourquoi ces principes portent le nom de 2#super[nde] loi de Newton (ou principe fondamental de la dynamique) et principe d'Euler (ou théorème du moment cinétique).
 
 == Quelques information avant le mouvement
-<quelques-information-avant-le-mouvement>
 Le langage mathématique peut sembler bien austère pour certains avec des #link("https://fr.wikipedia.org/wiki/Alphabet_grec#Les_principales_lettres")[lettres grecques], des scalaires, des vecteurs et autres entités qui ont chacune leurs règles de calcul.
 Certains #link("https://fr.wikipedia.org/wiki/Table_des_symboles_math%C3%A9matiques")[symboles] ou lettres sont couramment utilisés pour représenter une entité physique : $m$ pour la masse, $v$ pour la vitesse, $alpha$, $beta$, $gamma$ (_alpha_, _beta_, _gamma_) pour des angles, etc.
 Toutefois $alpha$ symbolise parfois un angle et d'autres fois l'accélération angulaire, $gamma$ un angle ou une accélération linéaire.
 Ainsi chaque terme doit être défini et il est plus important d'avoir une représentation d'un théorème et des exemples pour illustrer ses conséquences plutôt qu'une succession de lettres et opérateurs mathématiques que l'on peut retrouver aisément dans un formulaire.
 
 === Unités du Système International
-<unités-du-système-international>
 Les entités physiques se mesurent et se quantifient.
 Chaque valeur numérique doit être associée avec leur unité.
 Comme il existe différents systèmes d'unité (#eg, système métrique, système impérial) il existe des normes internationales.
@@ -126,7 +121,6 @@ D'autres unités sont utiles à connaître et reprennent parfois le nom d'illust
 Le #Newton, #Watt, #Pascal, #Joule ou #Hertz sont toutes des unités qui portent le nom de scientifiques illustres et s'écrivent de ce fait en majuscule à la différence des autres qui sont en minuscule.
 
 === Poids masse et gravité
-<poids-masse-et-gravité>
 
 #see-handbook[Chapitre 3.1]
 

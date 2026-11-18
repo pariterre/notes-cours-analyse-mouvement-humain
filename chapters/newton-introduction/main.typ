@@ -1,7 +1,6 @@
 #import "../../common/lib.typ": *
 
 = Un bref aperçu des lois de Newton
-<un-bref-aperçu-des-lois-de-newton>
 
 #learning-objectives(
   (
@@ -23,7 +22,6 @@ L'objet ici est d'avoir une représentation de ces trois principes pas d'en comp
 Ils reviendront tout au long du cours.
 
 == Principe d'Inertie
-<principe-dinertie>
 #quote[
   Tout corps persévère dans l'état de repos ou de mouvement
   uniforme en ligne droite dans lequel il se trouve, à moins que quelque
@@ -50,7 +48,6 @@ Comme il n'y a pas d'air qui créerait une force frottement, ces satellites vont
 ]
 
 == Principe fondamental de la dynamique
-<principe-fondamental-de-la-dynamique>
 #quote[
   Soit un corps de masse $m$ constante, l'accélération subie par ce corps dans un référentiel galiléen est proportionnelle à la résultante des forces qu'il subit, et inversement proportionnelle à sa masse.
 ]
@@ -79,7 +76,6 @@ On peut décrire ce principe par des phrases plus compréhensibles:
 
 
 == Principe d'action-réaction
-<principe-daction-réaction>
 #quote[
   Tout corps $A$ exerçant une force sur un corps $B$ subit une force d'intensité égale, de même direction mais de sens opposé, exercée par le corps $B$.
 ]
@@ -89,14 +85,13 @@ De même lorsque je suis debout j'applique une force sur le sol qui a sa réacti
 Pour savoir si on s'intéresse à l'action ou la réaction il est important de bien définir son système.
 
 == Définir un système
-<définir-un-système>
 Dans la seconde loi de Newton ou principe fondamental de la dynamique on s'intéresse aux forces externes appliquées sur un système et ce sera le plus souvent celles-ci qu'il faudra définir.
 Si on s'intéresse au système _sujet_ alors les forces extérieures sont son poids (force toujours présente dans nos analyses) et la force de réaction du sol, c'est-à-dire la force que le sol exerce sur le sujet.
 
 Pour ne pas oublier d'éléments il faut répondre à ceux quelques questions:
 + Quel est le *nom* du système?
   Quels sont les éléments compris dans ce système?
-+ Dans quel #link("https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rentiel_%28physique%29")[*référentiel*] se trouve-t-on? [La notion de référentiel est expliquée dans le  @utilisation-de-repères-et-vecteurs-en-cinématique]
++ Dans quel #link("https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rentiel_%28physique%29")[*référentiel*] se trouve-t-on? [La notion de référentiel est expliquée dans le  @sec:reference-frame-and-vectors]
 + Quel est *l'état* du système au temps initial $t_0 = #qty[0][s]$ (ou d'autres instants connus)? [L'état correspond à la position et la vitesse dans le référentiel définit précédemment]
 + Quelles sont les *forces extérieures* appliquées au système? [Le poids sera toujours présent et dès qu'un système est en contact, il y a aura des forces de réaction].
   Il faut donc compter le nombre de contacts.

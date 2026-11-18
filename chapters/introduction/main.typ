@@ -2,8 +2,6 @@
 
 
 = Introduction
-<sec:introduction>
-
 
 #learning-objectives(
   (
@@ -26,7 +24,6 @@ Certains disent que l'entraînement et par conséquent l'enseignement de l'éduc
 La réussite n'est pas une recette universelle mais un mélange subtil et approprié à une situation donnée.
 
 == Respecter l'intégrité des élèves
-<sec:respecter-lintégrité-des-élèves>
 Si la connaissance du développement psychomoteur de l'enfant et la physiologie de l'exercice apporte de nombreuses recommandations quant aux exercices adaptés ou à proscrire à chaque stade de développement, la biomécanique est tout autant indispensable.
 L'apport scientifique d'une formation universitaire a également comme objectif que l'enseignant communique des savoirs avec un langage juste et des termes appropriés, non pas des croyances populaires.
 En comprenant l'interaction de l'élève avec les équipements sportifs et en connaissant les comportements mécaniques tant du système ostéo-articulaire et musculosquelettique que des équipements sportifs, l'enseignant proposera des situations d'apprentissage plus sécuritaires.
@@ -34,7 +31,6 @@ Avant de déchainer la passion des foules de spectateurs par des exploits sporti
 Les objectifs pédagogiques de l'éducation physique sont bien plus larges que la seule performance mais nous ne sommes pas ici pour en discuter.
 
 == Proposer un exercice avec sa consigne
-<sec:proposer-un-exercice-avec-sa-consigne>
 Il est certain que l'enseignant d'éducation physique ne peut pas être expert dans toutes les activités qui lui sont et seront demandées d'enseigner.
 De ce fait il doit, à partir de ses connaissances de la physiologie, la biomécanique, la didactique et autres sciences de support, proposer un enseignement cohérent tant dans la séance que leur enchainement.
 Il est toujours possible d'aller chercher dans des livres qui proposent une multitude d'exercices en fonction de l'âge et du niveau des pratiquants.
@@ -50,7 +46,6 @@ Ce cours de biomécanique a pour objet d'apporter les éléments théoriques né
 
 
 == Corriger le mouvement
-<corriger-le-mouvement>
 Dans le cadre de ce cours#if config.at("lecture-title", default: "") != "" [ de "#config.lecture-title"], la science de support est la biomécanique et plus précisément la science du mouvement humain.
 L'outil premier et quasi-exclusif de l'enseignant est son œil.
 Or si tout le monde peut *voir* le même mouvement, son *observation* et son *analyse* en seront plus ou moins pertinentes selon ses connaissances et son expertise en biomécanique.
@@ -60,7 +55,6 @@ Par la suite les compétences en psychomotricité et pédagogie interviendront p
 
 
 == Observer pour s'interroger
-<observer-pour-sinterroger>
 Les exploits sportifs comme ceux réalisés lors des Jeux Olympiques (voir photos présentées dans le cours) rendent plus aisée l'observation des principes mécaniques car les athlètes proposent des performances à la limite des capacités humaines.
 Ces mêmes principes sont valables pour les performances des élèves dans le cadre des cours d'éducation physique.
 Ces images sont là pour s'interroger sur la faisabilité, la complexité du mouvement et aussi pour voir si, avant de commencer, nous avons des réponses (partielles ou totales, justes ou erronées).
