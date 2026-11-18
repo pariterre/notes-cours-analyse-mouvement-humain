@@ -208,6 +208,11 @@
     quantity-separator: [~],
   )
 
+  show table.cell: it => {
+    if it.y == 0 { strong(it) } else { it }
+  }
+  set table(fill: (x, y) => if y == 0 { _gray })
+
   body-content
 }
 
@@ -225,9 +230,15 @@
   body
 }
 
-#let two-columns-table(..body) = align(center, table(
-  columns: 2,
-  align: (right, left),
-  stroke: none,
-  ..body,
-))
+#let two-columns-table(..body) = {
+  align(center, table(
+    columns: 2,
+    align: (right, left),
+    stroke: none,
+    fill: none,
+    // Rangée vide de hauteur nulle : la première vraie rangée n'est plus la
+    // rangée 0 et n'est donc pas mise en gras comme un en-tête.
+    table.cell(colspan: 2, inset: 0pt)[],
+    ..body,
+  ))
+}

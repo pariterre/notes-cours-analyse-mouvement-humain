@@ -21,6 +21,7 @@ chapters-to-include = [
   "la-biomecanique",
   "newton-introduction",
   "reperes-et-vecteurs",
+  "cinematique-translation",
 ]
 
 annexes-to-include = [

@@ -40,9 +40,15 @@
   ),
 )
 
-#let interesting-note(body) = align(
+/// Encadré « note intéressante ».
+/// - breakable (bool): Si `true` (par défaut), l'encadré peut se poursuivre
+///   sur la page suivante; `false` le garde d'un seul tenant.
+/// - body (content): Le contenu de l'encadré.
+/// -> content
+#let interesting-note(breakable: true, body) = align(
   center,
-  box(
+  block(
+    breakable: breakable,
     width: 80%,
     stroke: 1.5pt,
     fill: _gray,
