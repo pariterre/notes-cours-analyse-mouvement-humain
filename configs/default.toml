@@ -16,7 +16,7 @@ chapter-on-same-page = true
 watermark = "Document de travail"
 
 chapters-to-include = [
-  "preliminary-informations",
+  "informations-preliminaires",
   "introduction",
   "la-biomecanique",
   "newton-introduction",
@@ -27,6 +27,6 @@ annexes-to-include = [
   "interesting-web-pages",
 ]
 
-[preliminary-informations]
+[informations-preliminaires]
 schedule-paragraph = '''
 '''

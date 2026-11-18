@@ -16,7 +16,7 @@ chapter-on-same-page = true
 watermark = "Document de travail"
 
 chapters-to-include = [
-  "preliminary-informations",
+  "informations-preliminaires",
   "introduction",
   "la-biomecanique",
   "newton-introduction",
@@ -27,7 +27,7 @@ annexes-to-include = [
   "interesting-web-pages",
 ]
 
-[preliminary-informations]
+[informations-preliminaires]
 schedule-paragraph = '''
 Les informations relatives aux horaires et salles de cours sont disponible sur le site de l'Université à l'adresse: https://www.progcours.umontreal.ca/guichets/progcours/cours/index_fiche_cours/KIN2101.html.
 Les notes de cours sont disponibles sur _Studium_.

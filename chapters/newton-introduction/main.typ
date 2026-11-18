@@ -92,7 +92,7 @@ Pour ne pas oublier d'éléments il faut répondre à ceux quelques questions:
 + Quel est le *nom* du système?
   Quels sont les éléments compris dans ce système?
 + Dans quel #link("https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rentiel_%28physique%29")[*référentiel*] se trouve-t-on? [La notion de référentiel est expliquée dans le  @sec:reference-frame-and-vectors]
-+ Quel est *l'état* du système au temps initial $t_0 = #qty[0][s]$ (ou d'autres instants connus)? [L'état correspond à la position et la vitesse dans le référentiel définit précédemment]
++ Quel est *l'état* du système au temps initial $t_i = #qty[0][s]$ (ou d'autres instants connus)? [L'état correspond à la position et la vitesse dans le référentiel définit précédemment]
 + Quelles sont les *forces extérieures* appliquées au système? [Le poids sera toujours présent et dès qu'un système est en contact, il y a aura des forces de réaction].
   Il faut donc compter le nombre de contacts.
 

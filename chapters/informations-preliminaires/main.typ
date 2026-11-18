@@ -9,7 +9,7 @@ Le présent document a pour objectif de faciliter la compréhension du cours "#c
 Il est accompagné des diapositives projetées en cours à l'exception de toutes les images dans le professeur n'est pas propriétaire en rapport avec les lois sur le copyright.
 
 #eval(
-  config.preliminary-informations.schedule-paragraph,
+  config.informations-preliminaires.schedule-paragraph,
   mode: "markup",
 )
 

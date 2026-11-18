@@ -161,7 +161,8 @@ nous obtenons $norm(arrow(A B)) = sqrt(x^2 + y^2 + z^2)$.
   $ arrow(F_1) = vec(40, -5, 10). $
   Sa norme sera
   $
-    norm(arrow(F_1)) = sqrt(40^2 + (-5)^2 + 10^2) = sqrt(1600 + 25 + 100) = #qty[41.5][N].
+    norm(arrow(F_1)) & = sqrt(40^2 + (-5)^2 + 10^2) = sqrt(1600 + 25 + 100) \
+    norm(arrow(F_1)) & approx #qty[41.5][N].
   $
   L'unité dépend de la nature du vecteur.
 
@@ -216,7 +217,7 @@ Le référentiel héliocentrique a pour origine le centre de masse du soleil (_H
 Ce référentiel est donc considéré comme fixe sur une échelle de temps humaine.
 
 Rappelons que le principe d'inertie ou 1#super[ère] loi de Newton pose que tout corps conserve sa vitesse ou son état de repos tant que la résultante des forces extérieures est nulle.
-En faisant également appel à la 2#super[ème] loi de Newton ($F = m a$), tant que la force est nulle, il n'y a pas d'accélération (si $F = 0$ alors $m a = 0$; mais comme la masse n'est pas nulle, alors $a = 0$).
+En faisant également appel à la 2#super[ième] loi de Newton ($F = m a$), tant que la force est nulle, il n'y a pas d'accélération (si $F = 0$ alors $m a = 0$; mais comme la masse n'est pas nulle, alors $a = 0$).
 Par exemple étant dans sa voiture sans accélérer, la voiture reste soit à l'arrêt soit conserve sa vitesse.
 
 #interesting-note[
