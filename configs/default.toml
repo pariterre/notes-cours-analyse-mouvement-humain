@@ -23,6 +23,7 @@ chapters-to-include = [
   "reperes-et-vecteurs",
   "cinematique-translation",
   "chute-libre",
+  "cinematique-rotation",
 ]
 
 annexes-to-include = [
