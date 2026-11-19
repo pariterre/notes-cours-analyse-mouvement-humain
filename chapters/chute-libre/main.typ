@@ -15,7 +15,11 @@ En effet, la chute libre ne signifie pas uniquement les activités avec de longu
 De ce fait la course est une succession de phases de contact et de chutes libres, un lancer en athlétismes ou dans un sport collectif est également une phase de chute libre pour le projectile, etc.
 Nous allons voir que, malgré le sens commun, tous les objets se comportent de la même façon en chute libre et que seuls les paramètres au décollage déterminent la cinématique... s'il n'y avait pas de frottement avec l'air.
 
-#figure(caption: [Exemples de chute libre])[
+#figure(
+  caption: [Exemples de chute libre],
+  kind: "video",
+  supplement: "Vidéo",
+)[
   #todo[https://www.youtube.com/watch?v=_MbqxJx_ups]
   #todo[https://www.youtube.com/watch?v=CGfPeL2K10I]
 ]
@@ -62,16 +66,16 @@ Certaines personnes préfèrent *SOH CAH TOA*.
 ]
 
 
-Dans notre cas, nous obtenons les vitesses horizontale ($V_x$) et verticale ($V_y$) à partir du vecteur de vitesse ($V$) par:
+Dans notre cas, nous obtenons les vitesses horizontale ($v_x$) et verticale ($v_y$) à partir du vecteur de vitesse ($v$) par:
 $
-  V_x = V cos(theta) \
-  V_y = V sin(theta) \
+  v_x = v cos(theta) \
+  v_y = v sin(theta) \
 $
-où $V$ est l'hypothénuse, $V_x$ est le côté adjacent et $V_y$ est le coté opposé.
+où $v$ est l'hypothénuse, $v_x$ est le côté adjacent et $v_y$ est le coté opposé.
 
 == Selon le principe fondamental de la dynamique
-D'après le Principe Fondamental de la Dynamique, la somme des forces extérieures est égale au produit de la masse $m$ par l'accélération $a$ du centre de masse du système: $sum_i arrow(F_i) = m arrow(a)$.
-La seule force appliquée au système étudié (on néglige les frottements aérodynamiques) est son poids ($arrow(W)$), soit $sum_i arrow(F_i) = arrow(W) = m arrow(g)$.
+D'après le Principe Fondamental de la Dynamique, la somme des forces extérieures est égale au produit de la masse $m$ par l'accélération $a$ du centre de masse du système: $sum_k arrow(F_k) = m arrow(a)$.
+La seule force appliquée au système étudié (on néglige les frottements aérodynamiques) est son poids ($arrow(W)$), soit $sum_k arrow(F_k) = arrow(W) = m arrow(g)$.
 Des deux équations précédentes on obtient $m arrow(a) = m arrow(g)$ ou $arrow(a) = arrow(g)$ après avoir simplifié la masse.
 L'accélération d'un corps en chute libre dépend donc uniquement de la gravité.
 La masse, la forme ou la couleur n'interviennent pas dans l'équation du mouvement.
@@ -82,7 +86,7 @@ En d'autres mots, comme la gravité est verticale, dirigée vers le bas et de no
 Il est alors possible, en connaissant l'accélération au cours du mouvement et les conditions initiales, de calculer la vitesse et la position horizontale et verticales de l'objet à tout instant.
 On se retrouve dans un cas de mouvement linéaire horizontal et un mouvement linéairement accéléré verticalement.
 
-*Selon l'axe $O x$* (horizontal), l'accélération est nulle $a_x (t) = 0$. Ainsi la vitesse à tout instant $t$ est égale à la vitesse de décollage $v_x (t) = v_x_i$.
+*Selon l'axe $O_x$* (horizontal), l'accélération est nulle $a_x (t) = 0$. Ainsi la vitesse à tout instant $t$ est égale à la vitesse de décollage $v_x (t) = v_x_i$.
 La position horizontale est donc une fonction linéaire de la vitesse et du temps.
 Il faut également ajouter la position initiale qui n'est pas toujours #qty[0][m]: $x(t) & =v_x_i t + x_i$.
 
@@ -95,7 +99,7 @@ On peut en extraire des conséquences directes pour le sport et l'éducation phy
   Il faut tout autant tenir compte de la position verticale.
   L'importance de la position initiale sera développée dans le prochain chapitre sur la géométrie des masses.
 
-*Selon l'axe $O y$* (vertical), l'accélération est celle de la gravité $a_y (t) = -9.81$.
+*Selon l'axe $O_y$* (vertical), l'accélération est celle de la gravité $a_y (t) = -9.81$.
 La vitesse va diminuer de plus en plus.
 Le plus souvent l'objet est lancé avec une vitesse positive (orientée vers le haut), cette vitesse va diminuer au cours du temps sous l'effet de la gravité jusqu'à devenir nulle.
 Le projectile a alors atteint le sommet de sa trajectoire.
@@ -148,7 +152,11 @@ Il est assez facile d'augmenter la performance avec des élèves juste en travai
 L'angle d'éjection a également beaucoup d'importance.
 Si théoriquement l'angle optimal est 40-45 degrés, les angles utilisés en saut en longueur varient entre 18 et 24 degrés et pour le lancer de poids autour de 40 degrés.
 
-#figure(caption: [Lancer de poids])[
+#figure(
+  caption: [Lancer de poids],
+  kind: "video",
+  supplement: "Vidéo",
+)[
   #todo[https://www.youtube.com/watch?v=qPZwXF1Xcpw]
 ]
 
@@ -181,6 +189,10 @@ Il faut rechercher un angle autour de 40 degrés.
   caption: [Effet de la vitesse et de l'angle de lâcher sur la performance en lancer de poids (même lancer de référence). Un écart de #qty[1][m / s] change la performance de plus de #qty[2][m], alors qu'un écart de 5° autour de 40° ne la change que de quelques centimètres.],
 )
 
-#figure(caption: [Animation sur l'effet de l'angle])[
+#figure(
+  caption: [Animation sur l'effet de l'angle],
+  kind: "video",
+  supplement: "Vidéo",
+)[
   #todo[https://www.youtube.com/watch?v=N0H-rv9XFHk&feature=related]
 ]

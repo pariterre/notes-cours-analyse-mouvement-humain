@@ -67,7 +67,7 @@ On peut utiliser le moyen mnémotechnique de la "main droite" où $x$ est le pou
   scaled-include(path("media/repere-sens-direct.typ"), width: 90%),
   caption: [Un repère cartésien est orthonormé.
     Les vecteurs unitaires $x$, $y$, $z$ sont organisés dans le sens direct.],
-)
+)<fig:orthonormal-reference-frame>
 
 
 #figure(

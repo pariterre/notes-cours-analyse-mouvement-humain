@@ -155,7 +155,7 @@ Par cette équation on montre que la gravité n'est pas la même sur tous les po
 De même, la gravité ne sera pas la même sur une autre planète comme sa masse et son rayon sont différents.
 
 #interesting-note[
-  Par exemple, avec les informations données précédemment vous pouvez calculer l'intensité de la gravité au niveau de la mer latitude #qty(quantity-separator: none)[0][#sym.degree] c'est-à-dire à l'équateur ($R = #qty[6356.75][km]$) puis latitude #qty(quantity-separator: none)[90][#sym.degree] (comme la Terre n'est pas ronde du fait de sa rotation sur elle-même $R = #qty[6378.135][km]$) ou encore la gravité sur la Lune ($M = #qty[7.349e22][kg]$ et $R = #qty[1737.3][km]$).
+  Par exemple, avec les informations données précédemment vous pouvez calculer l'intensité de la gravité au niveau de la mer latitude #to-degree(0) c'est-à-dire à l'équateur ($R = #qty[6356.75][km]$) puis latitude #to-degree(90) (comme la Terre n'est pas ronde du fait de sa rotation sur elle-même $R = #qty[6378.135][km]$) ou encore la gravité sur la Lune ($M = #qty[7.349e22][kg]$ et $R = #qty[1737.3][km]$).
   N'oubliez pas d'exprimer les distances dans l'unité internationale le $[#unit[m]]$ tel que #qty[1][km] représente #qty[1000][m].
 ]
 

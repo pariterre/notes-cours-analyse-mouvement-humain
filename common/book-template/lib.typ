@@ -4,6 +4,7 @@
 #import "annotations.typ": ref-to-find, revise, todo
 #import "formatters.typ": (
   Author, authors-header, en-number, fr-number, full-hide, long-date-display,
+  to-degree,
 )
 #import "image-formatter.typ": scaled-include
 #import "outlines.typ": outlines

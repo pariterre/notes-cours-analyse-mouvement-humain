@@ -52,7 +52,7 @@ Comme il n'y a pas d'air qui créerait une force frottement, ces satellites vont
   Soit un corps de masse $m$ constante, l'accélération subie par ce corps dans un référentiel galiléen est proportionnelle à la résultante des forces qu'il subit, et inversement proportionnelle à sa masse.
 ]
 
-L'équation associée à ce principe est $sum_i arrow(F_i) = m arrow(a)$ qui se lit: la somme (#sym.sum) des forces extérieures $F_i$ ("$i$" car il y a souvent plusieurs forces appliquées à un système) est égale au produit de la masse $m$ par l'accélération du centre de masse du système $a$.
+L'équation associée à ce principe est $sum_k arrow(F_k) = m arrow(a)$ qui se lit: la somme (#sym.sum) des forces extérieures $F_k$ ("$k$" car il y a souvent plusieurs forces appliquées à un système) est égale au produit de la masse $m$ par l'accélération du centre de masse du système $a$.
 La formulation mathématique est un moyen d'écrire moins tout en restant très précis dans le sens.
 On peut décrire ce principe par des phrases plus compréhensibles:
 

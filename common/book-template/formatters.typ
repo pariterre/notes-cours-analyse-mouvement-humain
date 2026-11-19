@@ -1,3 +1,4 @@
+#import "@preview/fancy-units:0.1.1": fancy-units-configure, num, qty, unit
 
 /// Format a number according to French conventions, with space as thousands separator and comma as decimal separator.
 ///
@@ -234,3 +235,5 @@
 }
 
 #let full-hide(body) = hide(place(body))
+
+#let to-degree(value) = qty(quantity-separator: none)[#value][#sym.degree]
