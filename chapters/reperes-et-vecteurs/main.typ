@@ -23,9 +23,9 @@ Certains mouvements peuvent s'analyser dans un seul plan ou selon un axe comme l
   columns: 5,
   inset: 6pt,
   [*plan*], [*axe 1*], [*axe 2*], [*vue*], [*division*],
-  [frontal], [vertical], [transversal], [face], [avant - arrière],
-  [horizontal], [transversal], [sagittal], [dessus], [haut - bas],
-  [sagittal], [sagittal], [vertical], [côté], [droite - gauche],
+  [frontal], [vertical], [transversal], [face], [avant --- arrière],
+  [horizontal], [transversal], [sagittal], [dessus], [haut --- bas],
+  [sagittal], [sagittal], [vertical], [côté], [droite --- gauche],
 ))
 
 == Notion de vecteurs et de référentiels

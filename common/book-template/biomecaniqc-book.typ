@@ -5,6 +5,7 @@
 #let _title = title
 #let _annexe-supplement = [Annexe]
 #let _gray = luma(240)
+#let table-header-color = _gray
 
 // Figure kinds whose numbering restarts at each chapter (see `_chapter-figures`)
 #let _figure-kinds = (image, table, raw, "video")
@@ -211,7 +212,7 @@
   show table.cell: it => {
     if it.y == 0 { strong(it) } else { it }
   }
-  set table(fill: (x, y) => if y == 0 { _gray })
+  set table(fill: (x, y) => if y == 0 { table-header-color })
 
   body-content
 }

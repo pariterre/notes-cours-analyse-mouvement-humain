@@ -24,6 +24,7 @@ chapters-to-include = [
   "cinematique-translation",
   "chute-libre",
   "cinematique-rotation",
+  "geometrie-des-masses",
 ]
 
 annexes-to-include = [

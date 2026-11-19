@@ -1,5 +1,6 @@
 #import "biomecaniqc-book.typ": (
-  annexes, biomecaniqc-book, num, qty, two-columns-table, unit,
+  annexes, biomecaniqc-book, num, qty, table-header-color, two-columns-table,
+  unit,
 )
 #import "annotations.typ": ref-to-find, revise, todo
 #import "formatters.typ": (

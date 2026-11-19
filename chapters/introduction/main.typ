@@ -126,7 +126,7 @@ Mais à partir de la compréhension des phénomènes en général, il vous sera 
   Une autre acrobatie que l'on voit souvent est le salto vrillé, l'athlète réalise dans la même acrobatie une rotation transversale combinée à une rotation longitudinales.
   Pourquoi les gymnastes, trampolinistes et plongeur n'adoptent pas les mêmes techniques et se retrouvent avec les bras placés différemment?
 
-  #theme[Hydrodynamique - aérodynamique]
+  #theme[Hydrodynamique --- aérodynamique]
   Il n'est pas rare de qualifier une voiture ou un casque de vélo d'aérodynamique sans véritablement en connaître le sens.
   Est-ce qu'une voiture aérodynamique signifie une voiture rapide ou une voiture avec une forme sympathique qui ressemble à une voiture de course?
   En cyclisme quel phénomène fait que les cyclistes dans le peloton travaillent moins que celui qui fait une échappée?

@@ -1,4 +1,5 @@
 #import "../../../common/lib.typ": *
+#import "../../../common/mannequin/mannequin.typ": mannequin, mannequin-points
 #import "@preview/cetz:0.4.1"
 
 
@@ -15,28 +16,32 @@
   let scale = 1.45
   let polar(r, a) = (r * calc.cos(a), r * calc.sin(a))
 
-  // Silhouette simplifiée, les mains sur la barre, orientée selon `a`
-  let gymnast(a, color) = {
-    let n = a + 90deg
-    let at(r, side: 0) = {
-      let (x, y) = polar(r * scale, a)
-      let (nx, ny) = polar(side * scale, n)
-      (x + nx, y + ny)
-    }
-    let limb(from, to, width) = line(at(from), at(to), stroke: (
-      paint: color,
-      thickness: width,
-      cap: "round",
-    ))
-    circle(
-      at(0.62, side: 0.17),
-      radius: 0.17 * scale,
-      fill: color,
-      stroke: none,
-    ) // tête
-    limb(0.05, 0.85, 4.5pt) // bras
-    limb(0.85, 1.75, 14pt) // tronc
-    limb(1.75, 2.85, 9pt) // jambes
+  // Gymnaste (mannequin vu de profil), bras tendus au-dessus de la tête, les
+  // mains sur la barre; le corps s'étend de la barre dans la direction `a`.
+  // Bras levés, le corps pointe vers le bas (-90deg) : on le fait donc tourner
+  // de `a + 90deg` dans le plan de la page.
+  let gymnast(a, color, name) = {
+    let pose = (
+      shoulder-r: 180deg,
+      shoulder-l: 180deg,
+      global: (pitch: -(a + 90deg)),
+    )
+    let size = 3.4
+    let p = mannequin-points(pose: pose, size: size)
+    // Prise : milieu des deux mains, placé sur la barre
+    let mid(a, b) = a.zip(b).map(((u, v)) => (u + v) / 2)
+    let grip = mid(
+      mid(p.wrist-r, p.hand-r),
+      mid(p.wrist-l, p.hand-l),
+    )
+    mannequin(
+      size: size,
+      origin: (-grip.at(0), -grip.at(2)),
+      view: (azimuth: -90deg),
+      pose: pose,
+      color: color,
+      name: name,
+    )
   }
 
   // Angle balayé
@@ -53,8 +58,8 @@
     stroke: none,
   )
 
-  gymnast(angle-a, palette.blue.line.lighten(78%)) // position passée : estompée
-  gymnast(angle-b, palette.blue.line)
+  gymnast(angle-a, rgb("#5c6bc0").lighten(65%), "a") // position passée : estompée
+  gymnast(angle-b, rgb("#5c6bc0"), "b")
 
   // Flèche de rotation (pointe dessinée à la main : courbe)
   let r-arrow = 1.3 * scale
