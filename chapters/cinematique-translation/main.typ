@@ -98,7 +98,7 @@ La notation avec la barre au-dessus du $V$ indique que c'est une valeur moyenne 
         [Vitesse \ $[#unit[m / s]]$],
         [Vitesse \ $[#unit[km / h]]$],
 
-        [$0.00$], [$0$], [-], [-], [-], [-],
+        [$0.00$], [$0$], [---], [---], [---], [---],
         [$2.89$], [$20$], [$0$ à #qty[20][m]], [$2.89$], [$6.92$], [$24.91$],
         [$4.64$], [$40$], [$20$ à #qty[40][m]], [$4.64$], [$11.43$], [$41.14$],
         [$6.31$], [$60$], [$40$ à #qty[60][m]], [$6.31$], [$11.98$], [$43.11$],
@@ -173,6 +173,7 @@ Plus les tangentes seront orientées vers le haut, plus la vitesse sera grande, 
 )
 
 == Accélération linéaire
+<sec:acceleration-lineaire>
 L'#link("https://fr.wikipedia.org/wiki/Acc%C3%A9l%C3%A9ration")[accélération] est la dérivée de la vitesse par rapport au temps (la vitesse de la vitesse).
 C'est une notion moins simple à se représenter.
 La meilleure représentation que l'on puisse en avoir est le fait d'être collé au dossier de son siège lors d'une forte accélération en voiture.

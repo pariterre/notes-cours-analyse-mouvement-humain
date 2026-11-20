@@ -135,7 +135,7 @@ Cette équation qui prend la forme d'une parabole.
 Au final, il est important de retenir que la chute libre est fonction de la position initiale, la vitesse d'éjection et son angle et la trajectoire décrit une parabole.
 
 #interesting-note[
-  *A retenir*
+  *À retenir*
 
   Lorsqu'un système n'est soumis qu'à son poids (cas de la chute libre), son accélération est l'accélération de la gravité, accélération verticale, dirigée vers le bas (centre de la Terre) et de norme #qty[9.81][m / s^2].
 

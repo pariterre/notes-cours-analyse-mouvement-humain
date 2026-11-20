@@ -1,6 +1,8 @@
 #import "../../common/lib.typ": *
 #import "./media/winter-table.typ": winter-table
-#import "./media/trampoliniste.typ": trampoliniste-exemple, trampoliniste-jambe, trampoliniste-vierge
+#import "./media/trampoliniste.typ": (
+  trampoliniste-exemple, trampoliniste-jambe, trampoliniste-vierge,
+)
 
 = Géométrie des masses
 #learning-objectives((
@@ -101,6 +103,7 @@ Ces positions sont bien entendu variables selon les sujets.
 )
 
 == Modèles anthropométriques
+<sec:modeles-anthrometriques>
 Il existe plusieurs méthodes expérimentales pour déterminer les paramètres inertiels segmentaires.
 Le volume des segments s'obtiennent en les plongeant dans un liquide (#eg, de l'eau) et en mesurant l'augmentation de volume (technique d'immersion).
 La masse est ensuite obtenue en multipliant le volume par une masse volumique moyenne.

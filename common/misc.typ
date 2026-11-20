@@ -2,6 +2,8 @@
 #import "palette.typ": *
 #import "variables.typ": Livre
 
+#let interesting-note-background-color = _gray
+
 /// Show the learning objectives
 /// - objectives (array): An array of content
 /// -> content
@@ -51,7 +53,7 @@
     breakable: breakable,
     width: 80%,
     stroke: 1.5pt,
-    fill: _gray,
+    fill: interesting-note-background-color,
     inset: 8pt,
     align(
       left,

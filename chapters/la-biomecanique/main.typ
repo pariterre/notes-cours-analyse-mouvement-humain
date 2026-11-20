@@ -78,7 +78,8 @@ Il est possible de retrouver l'unité d'un paramètre si l'on connait son expres
 ]
 
 On pourrait répéter cet exemple sur des entités comme la surface, le volume, l'impulsion, le moment cinétique, etc.
-#figure(two-columns-table(
+
+#align(center, box(two-columns-table(
   [Surface],
   [$[#unit[m^2]]$],
   [Volume],
@@ -87,7 +88,7 @@ On pourrait répéter cet exemple sur des entités comme la surface, le volume, 
   [$"[m/s]"$, $"[m·s"^(-1)"]"$],
   [Accélération],
   [$"[m/s/s]"$, $"[m/s"^(2)"]"$, $"[m·s"^(-2)"]"$],
-))
+)))
 
 Un exemple plus complexe est la force.
 Selon la seconde loi de Newton, que nous détaillerons par la suite, la force est égale au produit de la masse $[#unit[kg]]$ par l'accélération $[#unit[m s^-2]]$.
@@ -95,7 +96,7 @@ Plutôt que d'écrire ou dire $[#unit[kg m s^-2]]$ l'unité de la force a été 
 D'autres unités sont utiles à connaître et reprennent parfois le nom d'illustres scientifiques:
 
 
-#figure(two-columns-table(
+#align(center, box(two-columns-table(
   [Angle radian],
   [$[#unit[rad]]$],
 
@@ -116,7 +117,7 @@ D'autres unités sont utiles à connaître et reprennent parfois le nom d'illust
 
   [Puissance (#Watt)],
   [$[#unit[W]] = [#unit[J / s]]$],
-))
+)))
 
 Le #Newton, #Watt, #Pascal, #Joule ou #Hertz sont toutes des unités qui portent le nom de scientifiques illustres et s'écrivent de ce fait en majuscule à la différence des autres qui sont en minuscule.
 
@@ -167,7 +168,7 @@ De même, la gravité ne sera pas la même sur une autre planète comme sa masse
 Dans la majorité des calculs si l'intensité de la gravité n'est pas donnée on prend #qty[9.8][m / s^2] ou #qty[9.81][m / s^2].
 On peut répéter ce calcul pour d'autres planètes du système solaire et on obtiendra les valeurs moyennes suivantes:
 
-#figure(two-columns-table(
+#align(center, box(two-columns-table(
   [Saturne],
   [$g = #qty[8.96][m / s^2]$],
 
@@ -182,7 +183,7 @@ On peut répéter ce calcul pour d'autres planètes du système solaire et on ob
 
   [Lune],
   [$g = #qty[1.622][m / s^2]$],
-))
+)))
 
 #complementary-questions[
   + La cinématique est l'étude du mouvement des corps en :
