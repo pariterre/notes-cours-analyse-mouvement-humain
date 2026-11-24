@@ -30,6 +30,7 @@ chapters-to-include = [
   "cinetique-translation",
   "moment-force",
   "moment-cinetique",
+  "analyse-mouvement-camera",
 ]
 
 annexes-to-include = [
