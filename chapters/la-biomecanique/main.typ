@@ -77,7 +77,7 @@ Il est possible de retrouver l'unité d'un paramètre si l'on connait son expres
   La vitesse a donc comme unité $["m/s"]$ ou $"m.s"^(-1)$ (un exposant négatif signifie "diviser par").
 ]
 
-On pourrait répéter cet exemple sur des entités comme la surface, le volume, l'impulsion, le moment cinétique, etc.
+On pourrait répéter cet exemple sur des entités comme la surface, le volume, l'impulsion, la quantité de rotation / le moment cinétique, etc.
 
 #align(center, box(two-columns-table(
   [Surface],
@@ -85,9 +85,9 @@ On pourrait répéter cet exemple sur des entités comme la surface, le volume, 
   [Volume],
   [$[#unit[m^3]]$],
   [Vitesse],
-  [$"[m/s]"$, $"[m·s"^(-1)"]"$],
+  [$"[m/s]"$, $"[m.s"^(-1)"]"$],
   [Accélération],
-  [$"[m/s/s]"$, $"[m/s"^(2)"]"$, $"[m·s"^(-2)"]"$],
+  [$"[m/s/s]"$, $"[m/s"^(2)"]"$, $"[m.s"^(-2)"]"$],
 )))
 
 Un exemple plus complexe est la force.

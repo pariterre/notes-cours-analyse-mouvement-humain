@@ -38,11 +38,7 @@ Les satellites qui sont au-delà de l'atmosphère n'ont pas besoin de force prop
 Selon la vitesse à laquelle ils sont mis en orbite, ils vont être géostationnaire, c'est-à-dire se déplaçant à la même vitesse de rotation que le Terre ou avoir une vitesse relative à la Terre.
 Comme il n'y a pas d'air qui créerait une force frottement, ces satellites vont conserver leur vitesse jusqu'à ce qu'ils rencontrent un débris spatial!
 
-#figure(
-  caption: [Conservation du mouvement en microgravité],
-  kind: "video",
-  supplement: "Vidéo",
-)[
+#figure(caption: [Conservation du mouvement en microgravité])[
   #todo[https://www.youtube.com/watch?v=0z2CaNvF0x4&feature=related]
   #todo[https://www.youtube.com/watch?v=N6ZJnIJRUCI&feature=related]
 ]

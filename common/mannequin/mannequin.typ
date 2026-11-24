@@ -26,6 +26,13 @@
 
 #import "@preview/cetz:0.4.1"
 #import "../palette.typ": palette
+#import "../config.typ": config
+
+// Rendu 3D (volumes ombrés) ou, plus rapide à compiler, en bâtons. Réglé par
+// `render-3d-mannequin` dans la configuration (vrai par défaut); mettre
+// `render-3d-mannequin = false` pendant le développement accélère beaucoup la
+// compilation. Les points d'ancrage sont les mêmes dans les deux cas.
+#let _render-3d = config.at("render-3d-mannequin", default: true)
 
 // ---------------------------------------------------------------------------
 // Algèbre 3D
@@ -524,6 +531,41 @@
 ///   et le centre de masse du corps entier (`com`) sont des ancres.
 /// - visible (bool): si `false`, seules les ancres sont créées (utile pour
 ///   annoter dans un canevas séparé, par ex. quand le mannequin est rogné).
+// Version en bâtons : mêmes articulations, sans les volumes. Le côté le plus
+// éloigné de l'observateur est dessiné d'abord, plus sombre.
+#let _stick-figure(skeleton, size, cam, to-screen, color) = {
+  import cetz.draw: *
+  let pts = skeleton.points
+  let depth(k) = _dot(pts.at(k), cam.depth)
+  let stroke(dark) = (
+    paint: if dark { color.darken(30%) } else { color },
+    thickness: 0.03 * size * 1cm,
+    cap: "round",
+    join: "round",
+  )
+  let mid(a, b) = _scale(_add(pts.at(a), pts.at(b)), 0.5)
+  let neck = mid("shoulder-r", "shoulder-l")
+  let hips = mid("hip-r", "hip-l")
+  // Côtés triés du plus éloigné au plus proche
+  let sides = ("r", "l").sorted(key: s => -depth("hip-" + s))
+  let limb(side, keys, dark) = line(..keys.map(k => to-screen(pts.at(k + "-" + side))), stroke: stroke(dark))
+  for (i, side) in sides.enumerate() {
+    let dark = i == 0
+    limb(side, ("hip", "knee", "ankle", "heel", "toe", "ankle"), dark)
+  }
+  // Tronc et ceintures
+  line(to-screen(pts.at("hip-r")), to-screen(pts.at("hip-l")), stroke: stroke(false))
+  line(to-screen(hips), to-screen(neck), stroke: stroke(false))
+  line(to-screen(pts.at("shoulder-r")), to-screen(pts.at("shoulder-l")), stroke: stroke(false))
+  for (i, side) in sides.enumerate() {
+    limb(side, ("shoulder", "elbow", "wrist", "hand"), i == 0)
+  }
+  // Tête
+  let head = pts.at("com-head")
+  line(to-screen(neck), to-screen(head), stroke: stroke(false))
+  circle(to-screen(head), radius: 0.06 * size, fill: color.lighten(60%), stroke: stroke(false))
+}
+
 #let mannequin(
   pose: (:),
   view: (:),
@@ -549,7 +591,10 @@
   let reference = _dot(skeleton.points.pelvis, cam.depth)
 
   group(name: name, {
-    for part in if visible { parts.sorted(key: p => p.order) } else { () } {
+    if visible and not _render-3d {
+      _stick-figure(skeleton, size, cam, to-screen, color)
+    }
+    for part in if visible and _render-3d { parts.sorted(key: p => p.order) } else { () } {
       let outline = _hull(
         part.spheres.map(((c, r)) => _circle-points(to-screen(c), r)).flatten().chunks(2),
       )

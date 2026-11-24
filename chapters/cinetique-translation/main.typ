@@ -44,11 +44,7 @@ Le vecteur est une force avec sa direction, son sens et sa norme.
 Il est possible avec des outils appelés plateforme de force de mesurer la force d'action d'une personne sur le sol.
 La plateforme mesure cette force pour les trois directions de l'espace et avec des fréquences très élevées: #eg, #qty[1000][Hz] ($1000$ valeurs de force par seconde).
 
-#figure(
-  caption: [Plateforme de force (anglais)],
-  kind: "video",
-  supplement: "Vidéo",
-)[
+#video-figure(caption: [Plateforme de force (anglais)])[
   #todo[https://www.youtube.com/watch?v=-1CqNEMj_iU]
 ]
 
@@ -364,10 +360,8 @@ Nous avons vu que tout segment contribue par son accélération à l'accélérat
 Par conséquent la quantité d'accélération produit un changement des forces extérieures.
 Le mouvement choisi sollicite uniquement les bras dans un mouvement d'abduction de #to-degree(180) en #qty[1][s].
 
-#figure(
+#video-figure(
   caption: [Dynamique (cinématique et force) d'une abduction des bras (animation au ralenti durée réelle du mouvement 1 s)],
-  kind: "video",
-  supplement: "Vidéo",
 )[
   #todo[Trouver vidéo]
 ]

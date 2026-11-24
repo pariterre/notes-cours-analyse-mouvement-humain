@@ -14,6 +14,8 @@ lecture-code = ""
 lecture-title = ""
 chapter-on-same-page = true
 watermark = "Document de travail"
+# Mannequin en 3D (lent à compiler) ou en bâtons (rapide, pour le développement)
+render-3d-mannequin = true
 
 chapters-to-include = [
   "informations-preliminaires",
@@ -27,6 +29,7 @@ chapters-to-include = [
   "geometrie-des-masses",
   "cinetique-translation",
   "moment-force",
+  "moment-cinetique",
 ]
 
 annexes-to-include = [
@@ -36,3 +39,9 @@ annexes-to-include = [
 [informations-preliminaires]
 schedule-paragraph = '''
 '''
+
+[terminology]
+# Termes configurables : chaque entrée donne le nom, le pluriel, le genre et
+# (optionnellement) le symbole en notation math de Typst, sans les $.
+# Toutes les déclinaisons (le, du, au, des, …) en sont générées.
+moment-cinetique = { text = "moment cinétique", plural = "moments cinétiques", is-feminine = false, symbol = "sigma" }

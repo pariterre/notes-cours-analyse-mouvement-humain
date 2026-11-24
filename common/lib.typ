@@ -4,5 +4,5 @@
 #import "config.typ": config
 #import "misc.typ": (
   complementary-questions, interesting-note, interesting-note-background-color,
-  learning-objectives, see-handbook, tague-questions,
+  learning-objectives, see-handbook, tague-questions, video-figure,
 )

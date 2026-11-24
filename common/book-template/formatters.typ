@@ -1,116 +1,110 @@
 #import "@preview/fancy-units:0.1.1": fancy-units-configure, num, qty, unit
 
-/// Format a number according to French conventions, with space as thousands separator and comma as decimal separator.
+/// Convert a string or a piece of content (e.g. `[1 234,5]`) to plain text.
 ///
-/// - n (int|float): The number to format.
-/// -> content
-#let fr-number(n) = {
-  let value = if type(n) == int or type(n) == float {
-    n
-  } else {
-    let parsed = _to-string(n)
-      .replace(regex("\\s+"), "")
-      .replace(regex(","), ".")
-    if parsed == "" { 0 } else { float(parsed) }
-  }
-  let negative = value < 0
-  let abs-value = calc.abs(value)
-
-  // Integer part with French thousands grouping.
-  let integer = int(calc.floor(abs-value))
-  let groups = ()
-  let remaining = integer
-  while remaining >= 1000 {
-    let part = calc.rem(remaining, 1000)
-    let part-str = if part < 10 {
-      "00" + str(part)
-    } else if part < 100 {
-      "0" + str(part)
+/// - value (str|content|int|float): The value to convert.
+/// -> str
+#let _to-string(value) = {
+  if type(value) == str {
+    value
+  } else if type(value) == content {
+    if value.has("text") {
+      _to-string(value.text)
+    } else if value.has("children") {
+      value.children.map(_to-string).join("")
+    } else if value.has("body") {
+      _to-string(value.body)
+    } else if value == [ ] {
+      " "
     } else {
-      str(part)
+      ""
     }
-    groups.push(part-str)
-    remaining = int(calc.floor(remaining / 1000))
-  }
-
-  let int-str = str(remaining)
-  for part in groups.rev() {
-    int-str += " " + part
-  }
-
-  // Keep up to 2 decimals when needed, using French comma.
-  let decimals = int(calc.round((abs-value - integer) * 100))
-  let dec-str = if decimals == 0 {
-    ""
-  } else if decimals < 10 {
-    ",0" + str(decimals)
   } else {
-    "," + str(decimals)
-  }
-
-  if negative {
-    "-" + int-str + dec-str
-  } else {
-    int-str + dec-str
+    str(value)
   }
 }
+
+/// Format a number with the given thousands and decimal separators.
+///
+/// - n (int|float|str|content): The number to format. Strings and content may
+///   use either a comma or a dot as decimal separator, and may contain spaces.
+/// - thousands (str): The thousands separator.
+/// - decimal (str): The decimal separator.
+/// - decimals (auto|int): The number of decimals. `auto` keeps the decimals of
+///   the value as given (`"1.50"` stays `1.50`, `1.5` stays `1.5`, and floats
+///   lose their binary noise: `0.1 + 0.2` gives `0.3`); an integer rounds (or
+///   pads with zeros) to that many decimals.
+/// -> str
+#let _format-number(n, thousands, decimal, decimals) = {
+  let raw = if type(n) == float and n != 0.0 {
+    // Floats are written from their mantissa rounded to 14 significant
+    // digits, which removes the binary noise of computations (0.1 + 0.2 →
+    // 0.3). The decimal point is then placed by hand, so the result never
+    // uses scientific notation.
+    let e = int(calc.floor(calc.log(calc.abs(n))))
+    let m = calc.round(calc.abs(n) / calc.pow(10.0, e), digits: 13)
+    if m >= 10 { (m, e) = (m / 10, e + 1) }
+    let digits = str(m).replace(".", "")
+    let point = e + 1 // position of the decimal point in `digits`
+    let body = if point <= 0 {
+      "0." + "0" * -point + digits
+    } else if point >= digits.len() {
+      digits + "0" * (point - digits.len())
+    } else {
+      digits.slice(0, point) + "." + digits.slice(point)
+    }
+    if n < 0 { "-" + body } else { body }
+  } else if type(n) == int or type(n) == float { str(n) } else { _to-string(n) }
+  raw = raw.replace(regex("\\s+"), "").replace(",", ".").replace("−", "-")
+  if raw == "" { raw = "0" }
+  let negative = raw.starts-with("-")
+  raw = raw.trim("-", at: start).trim("+", at: start)
+
+  let (int-str, dec-str) = if decimals == auto {
+    let parts = raw.split(".")
+    (parts.at(0), parts.at(1, default: ""))
+  } else {
+    assert(type(decimals) == int and decimals >= 0, message: "'decimals' must be auto or a non-negative int")
+    let scale = calc.pow(10, decimals)
+    let scaled = int(calc.round(float(raw) * scale))
+    let fraction = str(calc.rem(scaled, scale))
+    (str(calc.quo(scaled, scale)), if decimals == 0 { "" } else { "0" * (decimals - fraction.len()) + fraction })
+  }
+  if int-str == "" { int-str = "0" }
+
+  // Group the integer part by thousands, from the right.
+  let groups = ()
+  while int-str.len() > 3 {
+    groups.insert(0, int-str.slice(-3))
+    int-str = int-str.slice(0, -3)
+  }
+  groups.insert(0, int-str)
+
+  let is-zero = (groups + (dec-str,)).join("").replace("0", "") == ""
+  let sign = if negative and not is-zero { "-" } else { "" }
+  sign + groups.join(thousands) + if dec-str != "" { decimal + dec-str } else { "" }
+}
+
+/// Format a number according to French conventions, with space as thousands separator and comma as decimal separator.
+///
+/// - n (int|float|str|content): The number to format.
+/// - decimals (auto|int): The number of decimals. `auto` keeps the decimals of
+///   the value as given; an integer rounds (or pads with zeros) to that many.
+/// -> str
+#let fr-number(n, decimals: auto) = _format-number(n, " ", ",", decimals)
 
 /// Format a number according to English conventions, with comma as thousands separator and dot as decimal separator.
 ///
-/// - n (int|float): The number to format.
-/// -> content
-#let en-number(n) = {
-  let value = if type(n) == int or type(n) == float {
-    n
-  } else {
-    let parsed = _to-string(n)
-      .replace(regex("\\s+"), "")
-      .replace(regex(","), ".")
-    if parsed == "" { 0 } else { float(parsed) }
-  }
-  let negative = value < 0
-  let abs-value = calc.abs(value)
+/// - n (int|float|str|content): The number to format.
+/// - decimals (auto|int): The number of decimals. `auto` keeps the decimals of
+///   the value as given; an integer rounds (or pads with zeros) to that many.
+/// -> str
+#let en-number(n, decimals: auto) = _format-number(n, ",", ".", decimals)
 
-  let integer = int(calc.floor(abs-value))
-  let groups = ()
-  let remaining = integer
-  while remaining >= 1000 {
-    let part = calc.rem(remaining, 1000)
-    let part-str = if part < 10 {
-      "00" + str(part)
-    } else if part < 100 {
-      "0" + str(part)
-    } else {
-      str(part)
-    }
-    groups.push(part-str)
-    remaining = int(calc.floor(remaining / 1000))
-  }
-
-  let int-str = str(remaining)
-  for part in groups.rev() {
-    int-str += "," + part
-  }
-
-  let decimals = int(calc.round((abs-value - integer) * 100))
-  let dec-str = if decimals == 0 {
-    ""
-  } else if decimals < 10 {
-    ".0" + str(decimals)
-  } else {
-    "." + str(decimals)
-  }
-
-  if negative {
-    "-" + int-str + dec-str
-  } else {
-    int-str + dec-str
-  }
-}
-
-/// Elements of authors-header
-/// - name (str): the name of the author
-/// - affiliations (none | str | array): the affiliations of the author. No affiliations is added if none is provided
+/// Create an author entry for `authors-header`.
+///
+/// - name (str): The name of the author.
+/// - affiliations (none|str|array): The affiliation(s) of the author. No affiliation is added if none is provided.
 /// -> dictionary
 #let Author(name, affiliations: none) = {
   let affs = if (affiliations == none) {
@@ -131,6 +125,7 @@
 }
 
 /// Format the authors header, including author names and their affiliations.
+///
 /// - authors (Author | array): An Author or an array of Author
 /// -> content
 #let authors-header(authors) = {
@@ -183,6 +178,7 @@
 }
 
 /// Format a date in long form, optionally capitalizing the month and supporting multiple languages.
+///
 /// - date (datetime|none): The date to format. If none, the current date is used.
 /// - capitalize (bool): Whether to capitalize the month name.
 /// - lang (str): The language for the month name ("fr" for French, "en" for English).
@@ -234,6 +230,104 @@
   return [#date.day() #month #date.year()]
 }
 
+/// Hide content without taking any space in the layout (unlike `hide`, which keeps its space).
+///
+/// - body (content): The content to hide.
+/// -> content
 #let full-hide(body) = hide(place(body))
 
+/// Format a value as an angle in degrees, with no space before the degree sign.
+///
+/// - value (int|float|content): The angle value.
+/// -> content
 #let to-degree(value) = qty(quantity-separator: none)[#value][#sym.degree]
+
+/// Capitalize the first letter of a string.
+///
+/// - body (str): The string to capitalize.
+/// -> str
+#let capitalize(body) = body.replace(
+  regex("^\w"),
+  m => upper(m.text),
+)
+
+/// Build every grammatical form of a configurable French term (articles,
+/// capitalization, plural, gender agreement, symbol). Before a vowel or a
+/// silent h, the article is elided (« l'énergie », « de l'énergie »).
+///
+/// ```example
+/// #let force = generate-gender-mapping(
+///   (text: "force", plural: "forces", is-feminine: true, symbol: "F"),
+/// )
+/// #force.name, #force.Name         // force, Force
+/// #force.le, #force.Le             // la force, La force
+/// #force.un, #force.Un             // une force, Une force
+/// #force.du, #force.Du             // de la force, De la force
+/// #force.au, #force.Au             // à la force, À la force
+/// #force.ce, #force.Ce             // cette force, Cette force (cet before a vowel)
+/// #force.names, #force.Names       // forces, Forces
+/// #force.les, #force.des, #force.aux // les forces, des forces, aux forces
+/// $#force.symbol$                  // F
+/// #force.article.Du                // De la (article only)
+/// constant#force.e, #force.il      // constante, elle (#force.Il: Elle)
+/// constant#force.es                // constantes (plural agreement)
+/// #if force.feminine [nulle] else [nul]
+/// ```
+///
+/// - element (dictionary): The term, often read from a section of the
+///   configuration, with the keys:
+///   - `text` (str, required): the singular, e.g. `"quantité de rotation"`;
+///   - `plural` (str, required): the plural, e.g. `"quantités de rotation"`;
+///   - `is-feminine` (bool, default `false`): the grammatical gender;
+///   - `symbol` (str, optional): the symbol in Typst math notation, without
+///     the `$` (e.g. `"q"` or `"sigma"`), evaluated in math mode.
+/// - elide (auto|bool): Whether to elide the article (« l' », « de l' »). `auto`
+///   elides before a vowel or an h; pass `false` for an aspirated h.
+/// -> dictionary
+#let generate-gender-mapping(element, elide: auto) = {
+  for key in ("text", "plural") {
+    assert(key in element, message: "generate-gender-mapping: missing key '" + key + "' in " + repr(element))
+  }
+  let name = element.text
+  let names = element.plural
+  let symbol = element.at("symbol", default: none)
+  let feminine = element.at("is-feminine", default: false)
+  let elide = if elide == auto {
+    lower(name).match(regex("^[aeiouyhàâäéèêëîïôöùûü]")) != none
+  } else { elide }
+
+  let article = (
+    le: if elide { "l'" } else if feminine { "la " } else { "le " },
+    du: if elide { "de l'" } else if feminine { "de la " } else { "du " },
+    au: if elide { "à l'" } else if feminine { "à la " } else { "au " },
+    un: if feminine { "une " } else { "un " },
+    ce: if feminine { "cette " } else if elide { "cet " } else { "ce " },
+    les: "les ",
+    des: "des ",
+    aux: "aux ",
+  )
+  let cap(key) = upper(key.first()) + key.slice(1)
+  for (key, value) in article {
+    article.insert(cap(key), capitalize(value))
+  }
+
+  let forms = (
+    name: name,
+    Name: capitalize(name),
+    names: names,
+    Names: capitalize(names),
+    article: article,
+    feminine: feminine,
+    e: if feminine { "e" } else { "" },
+    es: if feminine { "es" } else { "s" },
+    il: if feminine { "elle" } else { "il" },
+    Il: if feminine { "Elle" } else { "Il" },
+  )
+  for key in ("le", "du", "au", "un", "ce", "les", "des", "aux") {
+    let noun = if key in ("les", "des", "aux") { names } else { name }
+    forms.insert(key, article.at(key) + noun)
+    forms.insert(cap(key), capitalize(article.at(key) + noun))
+  }
+  if symbol != none { forms.insert("symbol", eval(symbol, mode: "math")) }
+  forms
+}

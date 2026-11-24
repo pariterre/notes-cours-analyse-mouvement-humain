@@ -264,7 +264,7 @@ La performance dépend de trois paramètres:
 + l'élévation du centre de gravité après le décollage: il faut la maximiser;
 + la différence de hauteur entre la barre et le centre de masse: il faut la minimiser sans qu'une partie du corps ne touche la barre au point de la faire tomber.
 
-#figure(caption: [Saut en hauteur], kind: "video", supplement: "Vidéo")[
+#video-figure(caption: [Saut en hauteur])[
   #todo[https://www.youtube.com/watch?v=IclEQA48IOE]
 ]
 
@@ -344,4 +344,4 @@ L'Homme est en général plus large qu'épais!
 #figure(
   scaled-include(path("media/moments-inertie-postures.typ"), width: 75%),
   caption: [Moments d'inertie calculés par rapport au centre de masse pour diverses postures. En haut : axe transversal (droit, carpé, groupé). En bas : axe longitudinal (bras le long du corps, bras écartés) et axe antéropostérieur],
-)
+)<fig:inertia-moment-of-human>

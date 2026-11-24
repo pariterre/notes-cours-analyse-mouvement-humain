@@ -79,11 +79,7 @@ L'utilisation d'une caméra vidéo permet de faire des premiers calculs car nous
 
 #interesting-note[
 
-  #figure(
-    caption: [Quadruple salto arrière au trapèze],
-    kind: "video",
-    supplement: "Vidéo",
-  )[
+  #video-figure(caption: [Quadruple salto arrière au trapèze])[
     #todo[https://www.youtube.com/watch?v=RyS6Z7qoXrE]
   ]
 
@@ -172,11 +168,7 @@ Il est alors important de travailler la gestion des trajectoires sur des mouveme
 Il ne faut pas oublier que plus le mouvement de rotation est rapide pour augmenter la performance, plus une erreur sur l'instant du lâcher aura des conséquences sur la trajectoire.
 Il faut alors laisser suffisamment d'espace entre les lanceurs et les placer avec un léger décalage antéropostérieur les uns par rapport aux autres.
 
-#figure(
-  caption: [Lancer de marteau et de disque],
-  kind: "video",
-  supplement: "Video",
-)[
+#video-figure(caption: [Lancer de marteau et de disque])[
   #todo[https://www.youtube.com/watch?v=GJHAdSqCjuk&feature=related]
   #todo[https://www.youtube.com/watch?v=Lh50gF5l0dw]
 ]

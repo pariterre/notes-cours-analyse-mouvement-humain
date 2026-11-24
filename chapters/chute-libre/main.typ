@@ -15,11 +15,7 @@ En effet, la chute libre ne signifie pas uniquement les activités avec de longu
 De ce fait la course est une succession de phases de contact et de chutes libres, un lancer en athlétismes ou dans un sport collectif est également une phase de chute libre pour le projectile, etc.
 Nous allons voir que, malgré le sens commun, tous les objets se comportent de la même façon en chute libre et que seuls les paramètres au décollage déterminent la cinématique... s'il n'y avait pas de frottement avec l'air.
 
-#figure(
-  caption: [Exemples de chute libre],
-  kind: "video",
-  supplement: "Vidéo",
-)[
+#video-figure(caption: [Exemples de chute libre])[
   #todo[https://www.youtube.com/watch?v=_MbqxJx_ups]
   #todo[https://www.youtube.com/watch?v=CGfPeL2K10I]
 ]
@@ -152,11 +148,7 @@ Il est assez facile d'augmenter la performance avec des élèves juste en travai
 L'angle d'éjection a également beaucoup d'importance.
 Si théoriquement l'angle optimal est 40-45 degrés, les angles utilisés en saut en longueur varient entre 18 et 24 degrés et pour le lancer de poids autour de 40 degrés.
 
-#figure(
-  caption: [Lancer de poids],
-  kind: "video",
-  supplement: "Vidéo",
-)[
+#video-figure(caption: [Lancer de poids])[
   #todo[https://www.youtube.com/watch?v=qPZwXF1Xcpw]
 ]
 
@@ -189,10 +181,6 @@ Il faut rechercher un angle autour de 40 degrés.
   caption: [Effet de la vitesse et de l'angle de lâcher sur la performance en lancer de poids (même lancer de référence). Un écart de #qty[1][m / s] change la performance de plus de #qty[2][m], alors qu'un écart de 5° autour de 40° ne la change que de quelques centimètres.],
 )
 
-#figure(
-  caption: [Animation sur l'effet de l'angle],
-  kind: "video",
-  supplement: "Vidéo",
-)[
+#video-figure(caption: [Animation sur l'effet de l'angle])[
   #todo[https://www.youtube.com/watch?v=N0H-rv9XFHk&feature=related]
 ]

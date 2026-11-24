@@ -14,6 +14,8 @@ lecture-code = "EPS230"
 lecture-title = "Biomécanique de l'activité physique"
 chapter-on-same-page = true
 watermark = "Document de travail"
+# Mannequin en 3D (lent à compiler) ou en bâtons (rapide, pour le développement)
+render-3d-mannequin = true
 
 chapters-to-include = [
   "informations-preliminaires",
@@ -27,6 +29,7 @@ chapters-to-include = [
   "geometrie-des-masses",
   "cinetique-translation",
   "moment-force",
+  "moment-cinetique",
 ]
 
 annexes-to-include = [
@@ -41,4 +44,10 @@ Les notes de cours sont en cours de construction, avec de la couleur; c'est pour
 Je vous propose alors d'utiliser un logiciel pour annoter vos PDFs tel PDF-XChange-Viewer (https://pdf-xchange-viewer.softonic.fr).
 Pensez à regarder régulièrement sur _Studium_ pour récupérer les nouvelles versions et documents qui s'ajoutent au cours de la session.
 '''
+
+[terminology]
+# Termes configurables : chaque entrée donne le nom, le pluriel, le genre et
+# (optionnellement) le symbole en notation math de Typst, sans les $.
+# Toutes les déclinaisons (le, du, au, des, …) en sont générées.
+moment-cinetique = { text = "quantité de rotation", plural = "quantités de rotation", is-feminine = true, symbol = "q" }
 

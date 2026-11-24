@@ -29,7 +29,7 @@ Ensuite chaque composante se calcule comme la soustraction de deux produits.
   caption: [Moyen mnémotechnique pour retrouver l'expression d'un produit vectoriel.],
 )
 
-Lorsque l'on travaille dans le plan $x O y$ par exemple, le vecteur moment cinétique ou du moment de la quantité de mouvement est porté par l'axe $O_z$, celui qui est perpendiculaire au plan $x O y$.
+Lorsque l'on travaille dans le plan $x O y$ par exemple, le vecteur #moment-cinetique.name ou du moment de la quantité de mouvement est porté par l'axe $O_z$, celui qui est perpendiculaire au plan $x O y$.
 En développant l'expression du produit vectoriel entre $arrow(a)$ et $arrow(b)$ en mettant les composantes en $z$ égales à zéro, on retrouve uniquement une composante en $z$ pour le vecteur $C$.
 
 $

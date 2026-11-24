@@ -88,3 +88,5 @@
 )[
   Pour plus d'information, voir #Livre #(body)
 ]
+
+#let video-figure = figure.with(kind: "video", supplement: "Vidéo")
