@@ -153,18 +153,10 @@ L'intensité de la force que la personne doit développer est plus faible que ce
 Dans le cas de la brouette, il est possible de soulever une charge bien plus importante que l'on pourrait porter sur son dos ou à bout de bras.
 Par contre dans le corps humain on rencontre peu de leviers de type inter-résistant.
 
-#image(
-  "../../../notes-de-cours-old/word/media/image182.png",
-  width: 2.620779746281715in,
-  height: 1.756576990376203in,
-)
-
 #figure(
   scaled-include(path("media/brouette.typ"), width: 60%),
   caption: [Exemple de levier inter-résistant : l'équilibre d'une brouette.],
 )
-
-<_Toc82332987>Figure IX.11. _Exemple de leviers inter-résistant._
 
 Le rapport $frac(style: "horizontal", b, a)$ montre l'avantage mécanique de ce type de levier.
 

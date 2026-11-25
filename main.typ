@@ -15,6 +15,14 @@
   chapter-on-same-page: config.chapter-on-same-page,
 )
 
+#todo[
+  - Valider les informations dans tous les chapitres
+  - Valider la correspondance entre les figures et le texte
+  - Valider la cohérence des couleurs (doré => résultats, gris => neutre, autres couleurs pour les informations)
+  - Valider les couleurs ne posent pas de problèmes pour les daltoniens
+  - Corriger le français de façon générale
+]
+
 #outlines()
 
 #for chapter in config.at("chapters-to-include", default: ()) {
@@ -29,4 +37,3 @@
     include path("chapters/" + chapter + "/main.typ")
   }
 ]
-
