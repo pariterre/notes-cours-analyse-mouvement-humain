@@ -64,11 +64,19 @@
     let parts = raw.split(".")
     (parts.at(0), parts.at(1, default: ""))
   } else {
-    assert(type(decimals) == int and decimals >= 0, message: "'decimals' must be auto or a non-negative int")
+    assert(
+      type(decimals) == int and decimals >= 0,
+      message: "'decimals' must be auto or a non-negative int",
+    )
     let scale = calc.pow(10, decimals)
     let scaled = int(calc.round(float(raw) * scale))
     let fraction = str(calc.rem(scaled, scale))
-    (str(calc.quo(scaled, scale)), if decimals == 0 { "" } else { "0" * (decimals - fraction.len()) + fraction })
+    (
+      str(calc.quo(scaled, scale)),
+      if decimals == 0 { "" } else {
+        "0" * (decimals - fraction.len()) + fraction
+      },
+    )
   }
   if int-str == "" { int-str = "0" }
 
@@ -82,7 +90,11 @@
 
   let is-zero = (groups + (dec-str,)).join("").replace("0", "") == ""
   let sign = if negative and not is-zero { "-" } else { "" }
-  sign + groups.join(thousands) + if dec-str != "" { decimal + dec-str } else { "" }
+  (
+    sign
+      + groups.join(thousands)
+      + if dec-str != "" { decimal + dec-str } else { "" }
+  )
 }
 
 /// Format a number according to French conventions, with space as thousands separator and comma as decimal separator.
@@ -285,11 +297,17 @@
 ///   elides before a vowel or an h; pass `false` for an aspirated h.
 /// -> dictionary
 #let generate-gender-mapping(element, elide: auto) = {
-  for key in ("text", "plural") {
-    assert(key in element, message: "generate-gender-mapping: missing key '" + key + "' in " + repr(element))
+  for key in ("text",) {
+    assert(
+      key in element,
+      message: "generate-gender-mapping: missing key '"
+        + key
+        + "' in "
+        + repr(element),
+    )
   }
   let name = element.text
-  let names = element.plural
+  let names = element.at("plural", default: none)
   let symbol = element.at("symbol", default: none)
   let feminine = element.at("is-feminine", default: false)
   let elide = if elide == auto {
@@ -315,7 +333,7 @@
     name: name,
     Name: capitalize(name),
     names: names,
-    Names: capitalize(names),
+    Names: if names == none { none } else { capitalize(names) },
     article: article,
     feminine: feminine,
     e: if feminine { "e" } else { "" },

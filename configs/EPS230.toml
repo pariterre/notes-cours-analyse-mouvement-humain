@@ -32,6 +32,7 @@ chapters-to-include = [
   "moment-cinetique",
   "analyse-mouvement-camera",
   "energie-travail-puissance",
+  "frottements",
 ]
 
 annexes-to-include = [
@@ -51,5 +52,7 @@ Pensez à regarder régulièrement sur _Studium_ pour récupérer les nouvelles 
 # Termes configurables : chaque entrée donne le nom, le pluriel, le genre et
 # (optionnellement) le symbole en notation math de Typst, sans les $.
 # Toutes les déclinaisons (le, du, au, des, …) en sont générées.
+
 moment-cinetique = { text = "quantité de rotation", plural = "quantités de rotation", is-feminine = true, symbol = "q" }
 
+coefficient-cinetique = { text = "dynamique", symbol = "d"}

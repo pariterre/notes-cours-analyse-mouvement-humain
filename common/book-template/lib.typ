@@ -9,3 +9,4 @@
 )
 #import "image-formatter.typ": scaled-include
 #import "outlines.typ": outlines
+#import "question-and-answer.typ": MultipleChoiceAnswer, multiple-choice

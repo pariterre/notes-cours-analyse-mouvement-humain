@@ -27,3 +27,4 @@
 
 // Raccourcis
 #let moment-cinetique = terms.moment-cinetique
+#let coefficient-cinetique = terms.coefficient-cinetique
