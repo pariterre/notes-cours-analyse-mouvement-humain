@@ -35,6 +35,7 @@ chapters-to-include = [
   "frottements",
   "equipements-sportifs",
   "marche-demarche",
+  "biomecanique-musculaire", 
 ]
 
 annexes-to-include = [

@@ -531,9 +531,13 @@
 ///   et le centre de masse du corps entier (`com`) sont des ancres.
 /// - visible (bool): si `false`, seules les ancres sont créées (utile pour
 ///   annoter dans un canevas séparé, par ex. quand le mannequin est rogné).
+/// - hidden (array): noms des parties à ne pas dessiner, par ex. `("head",)`.
+///   Parties : `head`, `neck`, `chest`, `pelvis`, puis pour chaque côté
+///   (`-r`, `-l`) `upper-arm`, `forearm`, `hand`, `thigh`, `shank`, `foot`.
+///   En rendu en bâtons, seule la tête (`head`) peut être masquée.
 // Version en bâtons : mêmes articulations, sans les volumes. Le côté le plus
 // éloigné de l'observateur est dessiné d'abord, plus sombre.
-#let _stick-figure(skeleton, size, cam, to-screen, color) = {
+#let _stick-figure(skeleton, size, cam, to-screen, color, hidden: ()) = {
   import cetz.draw: *
   let pts = skeleton.points
   let depth(k) = _dot(pts.at(k), cam.depth)
@@ -561,9 +565,11 @@
     limb(side, ("shoulder", "elbow", "wrist", "hand"), i == 0)
   }
   // Tête
-  let head = pts.at("com-head")
-  line(to-screen(neck), to-screen(head), stroke: stroke(false))
-  circle(to-screen(head), radius: 0.06 * size, fill: color.lighten(60%), stroke: stroke(false))
+  if "head" not in hidden {
+    let head = pts.at("com-head")
+    line(to-screen(neck), to-screen(head), stroke: stroke(false))
+    circle(to-screen(head), radius: 0.06 * size, fill: color.lighten(60%), stroke: stroke(false))
+  }
 }
 
 #let mannequin(
@@ -575,6 +581,7 @@
   color: rgb("#5c6bc0"),
   name: "mannequin",
   visible: true,
+  hidden: (),
 ) = {
   import cetz.draw: *
 
@@ -583,7 +590,7 @@
   let cam = _camera(view)
   let to-screen(p) = _add(_project(cam, p), origin)
 
-  let parts = _parts(skeleton, size, sex).map(part => {
+  let parts = _parts(skeleton, size, sex).filter(part => part.name not in hidden).map(part => {
     let depth = part.spheres.map(((c, r)) => _dot(c, cam.depth)).sum() / part.spheres.len()
     (..part, depth: depth, order: depth + part.priority * 0.002 * size)
   })
@@ -592,7 +599,7 @@
 
   group(name: name, {
     if visible and not _render-3d {
-      _stick-figure(skeleton, size, cam, to-screen, color)
+      _stick-figure(skeleton, size, cam, to-screen, color, hidden: hidden)
     }
     for part in if visible and _render-3d { parts.sorted(key: p => p.order) } else { () } {
       let outline = _hull(
