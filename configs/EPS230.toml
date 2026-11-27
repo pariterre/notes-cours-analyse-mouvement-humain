@@ -43,6 +43,7 @@ chapters-to-include = [
 annexes-to-include = [
   "interesting-web-pages",
   "interesting-biomecanique-web-pages",
+  "interesting-mathematiques-web-pages",
 ]
 
 [informations-preliminaires]
