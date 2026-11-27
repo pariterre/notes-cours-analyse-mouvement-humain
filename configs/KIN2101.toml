@@ -37,6 +37,7 @@ chapters-to-include = [
   "marche-demarche",
   "biomecanique-musculaire", 
   "analyse-blessures", 
+  "situations-pedagogiques",
 ]
 
 annexes-to-include = [

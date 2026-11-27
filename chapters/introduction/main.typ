@@ -82,8 +82,8 @@ Mais à partir de la compréhension des phénomènes en général, il vous sera 
 
   #theme[Citius Altus Fortius]
   La devise des Jeux Olympiques "plus loin, plus haut, plus fort" rappelle certains paramètres de la performance notamment dans certaines disciplines sportives comme l'athlétisme.
-  En analysant l'évolution des performances en #sport-name[saut en hauteur], on remarque qu'elle est liée à l'évolution des techniques (#eg, ciseaux, rouleau ventral, fosbury flop).
-  En quoi le fosbury flop est une technique plus performante?
+  En analysant l'évolution des performances en #sport-name[saut en hauteur], on remarque qu'elle est liée à l'évolution des techniques (#eg, ciseaux, rouleau ventral, _fosbury flop_).
+  En quoi le _fosbury flop_ est une technique plus performante?
   Quels sont les paramètres qui conditionnent la performance en saut en hauteur?
 
   La performance en #sport-name[saut à la perche] est davantage associée à l'évolution des équipements tant de la perche que des tapis de réception.
